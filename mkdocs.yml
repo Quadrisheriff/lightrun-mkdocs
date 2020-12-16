@@ -1,0 +1,42 @@
+
+site_name: Lightrun                
+site_description: Lightrun mkdocs website
+site_author: 
+
+
+theme:                 
+  name: material
+  logo:
+  favicon: 
+  palette:            
+    primary: 'purple'
+    accent: 'blue'
+  feature:
+    tabs: true
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+copyright: "Copyright &copy  2020, Lightrun."
+
+pages:
+  - "Overview": introduction.md
+  - "Lightrun license use": opensource.md
+  - "Installation": install.md
+  - "Quick start tutorial": demo.md
+  - "Using lightrun in your workflow": plugin.md
+  - "Integrations": integrations.md
+  - "Server-side integrations": server-integrations.md
+  - "Install the plugin": install-client.md
+  - "Manage users": useradmin.md
+  - "Configure and monitor exceptions": adminexceptions.md
+  - "Agent administration": agentadmin.md
+  - "View exceptions as a user": userexceptions.md
+  - "CLI Reference": cli.md
+  - "CLI Reference": cli-manage.md
+  - "Alerting": alerts.md
+  - "Troubleshooting": troubleshooting.md
+  - "Start debugging with your team": server-setup.md
