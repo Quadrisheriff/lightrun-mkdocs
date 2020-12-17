@@ -1,0 +1,706 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lightrun mkdocs website">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="..">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>Server-side integrations - Lightrun</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ab47bd">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="purple" data-md-color-accent="blue">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#statsd-_statsd" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Lightrun" class="md-header-nav__button md-logo" aria-label="Lightrun">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Lightrun
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Server-side integrations
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Lightrun" class="md-nav__button md-logo" aria-label="Lightrun">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Lightrun
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../opensource/" class="md-nav__link">
+      Lightrun license use
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../demo/" class="md-nav__link">
+      Quick start tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../plugin/" class="md-nav__link">
+      Using lightrun in your workflow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../integrations.md" class="md-nav__link">
+      Integrations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Server-side integrations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Server-side integrations
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statsd-_statsd" class="md-nav__link">
+    Statsd {#_statsd}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-_prometheus" class="md-nav__link">
+    Prometheus {#_prometheus}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datadog-_datadog" class="md-nav__link">
+    Datadog {#_datadog}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logzio-_logz_io" class="md-nav__link">
+    Logz.io {#_logz_io}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq-_faq" class="md-nav__link">
+    FAQ {#_faq}
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install-client/" class="md-nav__link">
+      Install the plugin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../useradmin/" class="md-nav__link">
+      Manage users
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../adminexceptions/" class="md-nav__link">
+      Configure and monitor exceptions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../agentadmin/" class="md-nav__link">
+      Agent administration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../userexceptions/" class="md-nav__link">
+      View exceptions as a user
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cli/" class="md-nav__link">
+      CLI Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cli-manage/" class="md-nav__link">
+      CLI Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../alerts/" class="md-nav__link">
+      Alerting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshooting/" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../server-setup/" class="md-nav__link">
+      Start debugging with your team
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statsd-_statsd" class="md-nav__link">
+    Statsd {#_statsd}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-_prometheus" class="md-nav__link">
+    Prometheus {#_prometheus}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datadog-_datadog" class="md-nav__link">
+    Datadog {#_datadog}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logzio-_logz_io" class="md-nav__link">
+    Logz.io {#_logz_io}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq-_faq" class="md-nav__link">
+    FAQ {#_faq}
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Server-side integrations</h1>
+                
+                <p>Lightrun comes with working integrations for some of the leading monitoring, alerting and communication platforms. The list of supported integrations is constantly expanding. You can see the updated list of the integrations and configure each of them through the Integrations panel (<em>Manager</em> → <em>System Integrations</em>)</p>
+<p>:::note
+Manager role is required to edit integrations.
+:::</p>
+<p><img alt="Integrations Page" src="../../img/integrations.png" /></p>
+<p>::: {.note}
+To see an agent data sent to any of the configured integration, please
+make sure it's piping status is set to either \"Plugin\" or \"Both\".
+:::</p>
+<h2 id="statsd-_statsd">Statsd {#_statsd}<a class="headerlink" href="#statsd-_statsd" title="Permanent link">&para;</a></h2>
+<p><img alt="StatsD Configuration" src="../../img/statsd.png" /></p>
+<ol>
+<li>
+<p>Press \"Connect\" button on Statsd configuration widget</p>
+</li>
+<li>
+<p>Fill \"Server\" and \"UDP Port\" fields with the relevant values
+    (default values are displayed)</p>
+</li>
+<li>
+<p>Press \"Connect\" button and make sure you see the approval toast
+    message</p>
+</li>
+<li>
+<p>Press \"Disconnect\" button to disable the configuration</p>
+</li>
+</ol>
+<h2 id="prometheus-_prometheus">Prometheus {#_prometheus}<a class="headerlink" href="#prometheus-_prometheus" title="Permanent link">&para;</a></h2>
+<p><img alt="Prometheus Configuration" src="../../img/prometheus.png" /></p>
+<ol>
+<li>
+<p>Press \"Connect\" button on Prometheus configuration widget</p>
+</li>
+<li>
+<p>Copy the scrape config to your prometheus.yml file</p>
+</li>
+<li>
+<p>Press \"Activate\" button and make sure you see the approval toast
+    message</p>
+</li>
+<li>
+<p>To disable the integration, remove the scrape config from the
+    prometheus.yaml file or press \"Deactivate\" button</p>
+</li>
+</ol>
+<h2 id="datadog-_datadog">Datadog {#_datadog}<a class="headerlink" href="#datadog-_datadog" title="Permanent link">&para;</a></h2>
+<p><img alt="Datadog Configuration" src="../../img/datadog.png" /></p>
+<ol>
+<li>
+<p>Press \"Connect\" button on Datadog configuration widget</p>
+</li>
+<li>
+<p>Add your Datadog API key</p>
+</li>
+<li>
+<p>Press \"Connect\" button and make sure you see the approval toast
+    message</p>
+</li>
+<li>
+<p>To disable the integration press \"Disconnect\" button</p>
+</li>
+</ol>
+<h2 id="logzio-_logz_io">Logz.io {#_logz_io}<a class="headerlink" href="#logzio-_logz_io" title="Permanent link">&para;</a></h2>
+<p><img alt="Logz.io Configuration" src="../../img/logzio.png" /></p>
+<ol>
+<li>
+<p>Press \"Connect\" button on Logz.io configuration widget</p>
+</li>
+<li>
+<p>Fill \"URL\", \"Company\" and \"Type\" fields with the relevant
+    values (default values are displayed)</p>
+</li>
+<li>
+<p>Add your Logz.io token (no default value displayed)</p>
+</li>
+<li>
+<p>Press \"Connect\" button and make sure you see the approval message</p>
+</li>
+<li>
+<p>To disable the integration, press \"Disconnect\" button</p>
+</li>
+</ol>
+<h2 id="faq-_faq">FAQ {#_faq}<a class="headerlink" href="#faq-_faq" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Make sure the agent piping status set to either \"Plugin\" or
+    \"Both\".</p>
+</li>
+<li>
+<p>Wait a few minutes after sending your logs to give the platform time
+    to index and make them available for search. It normally happens
+    from within seconds to one minute, but sometimes it can take longer.</p>
+</li>
+<li>
+<p>Check for network connectivity issues, e.g. firewall configurations</p>
+</li>
+</ol>
+<p><strong>Q: I see error toast messages when pressing \"Connect\" or the
+\"Activate\" button..</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">Make sure you provide proper values for the related fields. Please refer one fo the following:</span>
+</code></pre></div>
+
+<ul>
+<li>
+<p><a href="https://github.com/statsd/statsd">StatsD README</a></p>
+</li>
+<li>
+<p><a href="https://prometheus.io/docs/introduction/faq/">Prometheus FAQ</a></p>
+</li>
+<li>
+<p><a href="https://docs.datadoghq.com/logs/guide/log-collection-troubleshooting-guide/">Datadog Log Collection Troubleshooting
+    Guide</a></p>
+</li>
+<li>
+<p><a href="https://docs.logz.io/user-guide/log-shipping/log-shipping-troubleshooting.html">Logz.io shipping troubleshooting
+    guide</a></p>
+</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../plugin/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Using lightrun in your workflow
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../install-client/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Install the plugin
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy  2020, Lightrun.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

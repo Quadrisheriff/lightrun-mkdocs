@@ -1,0 +1,801 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lightrun mkdocs website">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="..">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>CLI Reference - Lightrun</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ab47bd">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="purple" data-md-color-accent="blue">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usage-_usage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Lightrun" class="md-header-nav__button md-logo" aria-label="Lightrun">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Lightrun
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              CLI Reference
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Lightrun" class="md-nav__button md-logo" aria-label="Lightrun">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Lightrun
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../opensource/" class="md-nav__link">
+      Lightrun license use
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../demo/" class="md-nav__link">
+      Quick start tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../plugin/" class="md-nav__link">
+      Using lightrun in your workflow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../integrations.md" class="md-nav__link">
+      Integrations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../server-integrations/" class="md-nav__link">
+      Server-side integrations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install-client/" class="md-nav__link">
+      Install the plugin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../useradmin/" class="md-nav__link">
+      Manage users
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../adminexceptions/" class="md-nav__link">
+      Configure and monitor exceptions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../agentadmin/" class="md-nav__link">
+      Agent administration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../userexceptions/" class="md-nav__link">
+      View exceptions as a user
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        CLI Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      CLI Reference
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage-_usage" class="md-nav__link">
+    Usage {#_usage}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-_examples" class="md-nav__link">
+    Examples {#_examples}
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cli-manage/" class="md-nav__link">
+      CLI Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../alerts/" class="md-nav__link">
+      Alerting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshooting/" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../server-setup/" class="md-nav__link">
+      Start debugging with your team
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage-_usage" class="md-nav__link">
+    Usage {#_usage}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-_examples" class="md-nav__link">
+    Examples {#_examples}
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>CLI Reference</h1>
+                
+                <p>The CLI can be used in parallel to the plugin. It's a matter of personal
+preference.</p>
+<p>When we submit a command via the plugin/CLI we often provide a line
+number/file name. If they don't match the bytecode version on the app
+things will behave inconsistently and fail.</p>
+<h2 id="usage-_usage">Usage {#_usage}<a class="headerlink" href="#usage-_usage" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><code>lightrunc list-agents</code> --- List the agents</p>
+</li>
+<li>
+<p><code>lightrunc list-tags</code> --- List the tags</p>
+</li>
+<li>
+<p><code>lightrunc list-agents-by-tag &lt;Tag&gt;</code> --- List the agents by given
+    tag</p>
+</li>
+<li>
+<p><code>lightrunc list-actions &lt;AgentId&gt;</code> --- List the actions for the
+    given agent id</p>
+</li>
+<li>
+<p><code>lightrunc log &lt;AgentId&gt; &lt;Filename&gt;:&lt;LineNumber&gt; &lt;Format&gt; -expireSec</code> --- Insert
+    a log to the given agent at the given file/line with the format
+    (text of the log)</p>
+</li>
+<li>
+<p><code>lightrunc clog &lt;AgentId&gt; &lt;Filename&gt;:&lt;LineNumber&gt; &lt;Format&gt; -condition -expireSec</code> --- Insert
+    a conditional log to the given agent at the given file/line with the
+    format (text of the log)</p>
+</li>
+<li>
+<p><code>lightrunc snapshot &lt;AgentId&gt; &lt;Filename&gt;:&lt;LineNumber&gt; -condition</code> --- Insert
+    a breakpoint to the given agent at the given file/line</p>
+</li>
+<li>
+<p><code>lightrunc snapshot-data &lt;AgentId&gt; &lt;SnapshotId&gt;</code> --- Prints the
+    accumulated data for a snapshot</p>
+</li>
+<li>
+<p><code>lightrunc counter &lt;AgentId&gt; &lt;Filename&gt;:&lt;LineNumber&gt; &lt;CounterName&gt; -condition -expireSec</code> --- Insert
+    a breakpoint to the given agent at the given file/line</p>
+</li>
+<li>
+<p><code>lightrunc set-value &lt;AgentId&gt; &lt;FileName&gt;:&lt;LineNumber&gt; -expireSec &lt;VarName1=VarValue&gt; &lt;VarName2=VarValue&gt;…​</code> --- Set
+    the values of the given variables in a certain line</p>
+</li>
+<li>
+<p><code>lightrunc rm &lt;AgentId&gt; &lt;LogId&gt;</code> --- Removes a log from the given
+    agent</p>
+</li>
+<li>
+<p><code>lightrunc rm-tag &lt;tagName&gt;</code> --- Removes a tag from the server</p>
+</li>
+<li>
+<p><code>lightrunc status</code> --- Prints the current status of the backend</p>
+</li>
+<li>
+<p><code>lightrunc detach &lt;on|off&gt;</code> --- Disconnects all agents and disables
+    lightrun instantly (when on) until it's turned off again</p>
+</li>
+<li>
+<p><code>lightrunc print-logs &lt;AgentId&gt;</code> --- Print recent logs for the given
+    agent</p>
+</li>
+<li>
+<p><code>lightrunc enable-logs &lt;AgentId&gt;</code> --- Logs for this agent id will be
+    available in the <code>print-logs</code> command. Logs are still printed in the
+    server.</p>
+</li>
+<li>
+<p><code>lightrunc client-logs &lt;AgentId&gt;</code> --- Logs for this agent id will be
+    available in the <code>print-logs</code> command and hidden in the server!</p>
+</li>
+<li>
+<p><code>lightrunc disable-logs &lt;AgentId&gt;</code> --- Stops tracking logs for the
+    given agent ID in the backend/client (this doesn't stop the log)</p>
+</li>
+<li>
+<p><code>lightrunc server-url &lt;ServerURL&gt;</code> --- Sets the server URL for the
+    command line</p>
+</li>
+<li>
+<p><code>lightrunc create-company &lt;Name&gt; &lt;LicenseExpiry dd/MM/yyyy&gt; &lt;LicensedAgents&gt; &lt;AgentsEnabled&gt;</code> --- Creates
+    a new company with an agent user.</p>
+</li>
+<li>
+<p><code>lightrunc create-user &lt;Username&gt; &lt;FirstName&gt; &lt;LastName&gt; &lt;Email&gt; &lt;CompanyName&gt; &lt;Role1&gt; &lt;Role2&gt;…​</code> --- Creates
+    a new user in the given company.</p>
+</li>
+<li>
+<p><code>lightrunc login &lt;Username&gt;</code> Log in with the given user name (you
+    will be prompted for password). Optionally you can add a password by
+    adding a 3rd argument password followed by your password</p>
+</li>
+<li>
+<p><code>lightrunc logout</code> --- Logs out the currently logged in user on this
+    machine</p>
+</li>
+<li>
+<p><code>lightrunc version</code> --- Prints the version of lightrunc and the
+    backend server</p>
+</li>
+<li>
+<p><code>lightrunc listen</code> --- Listens to agent/log registration events and
+    prints them out</p>
+</li>
+<li>
+<p><code>lightrunc -v</code> --- Verbose mode</p>
+</li>
+<li>
+<p><code>lightrunc user</code> --- Prints the details on the server for the
+    currently logged in user</p>
+</li>
+<li>
+<p><code>lightrunc help</code> --- Print help details</p>
+</li>
+</ul>
+<p>There's a lot to digest here but it's mostly intuitive once you start
+using it.</p>
+<p><strong>Before We Begin.</strong></p>
+<p>Before doing anything we must login and set the server URL. This must be
+done at least once per client machine.</p>
+<p>::: {.tip}
+Login credentials are shared between the CLI and Plugin
+:::</p>
+<div class="codehilite"><pre><span></span><code>lightrunc server-url https://192.168.0.10:8080/company/DefaultCompany
+</code></pre></div>
+
+<p>This will set the URL of the backend to the given URL. We need to
+replace <code>192.168.0.10:8080</code> with the actual server IP and port.</p>
+<p>We can then use the login command as such:</p>
+<div class="codehilite"><pre><span></span><code>lightrunc login myuser
+</code></pre></div>
+
+<p>This will produce a password prompt.</p>
+<p>::: {.note}
+For this to work we need to create a new user in the server first via
+the web UI
+:::</p>
+<h2 id="examples-_examples">Examples {#_examples}<a class="headerlink" href="#examples-_examples" title="Permanent link">&para;</a></h2>
+<p><strong>List Agents and Actions.</strong></p>
+<div class="codehilite"><pre><span></span><code>lightrunc list agents
+</code></pre></div>
+
+<p>This prints the list of agents and their associated actions. It results
+in output similar to this:</p>
+<div class="codehilite"><pre><span></span><code><span class="m">0</span> : ID 5c6e9cdef4e833279ee286a1 HOST LAPTOP-GAJ05OS8 PID <span class="m">18903</span> UPDATE Mon, <span class="m">28</span> Oct <span class="m">2019</span> <span class="m">16</span>:19:03 GMT
+ &gt;  ACTION 8c6e9cdef4e833279ee265f FILE PrimeMain.java LINE <span class="m">20</span> TXT Hello <span class="o">{</span>cnt<span class="o">}</span>
+</code></pre></div>
+
+<p><strong>List Actions.</strong></p>
+<div class="codehilite"><pre><span></span><code>lightrunc list actions <span class="m">0</span>
+</code></pre></div>
+
+<p>If we want to see the actions of a specific agent and not all agents we
+can use list actions. Notice the last argument is the agent id.</p>
+<p>Whenever an agent ID or log ID is used we can provide the explicit ID
+e.g. in the case above it would be:</p>
+<div class="codehilite"><pre><span></span><code>lightrunc list actions 5c6e9cdef4e833279ee286a1
+</code></pre></div>
+
+<p>However, providing an offset from the listing would also work in this
+case. So 0 as we did before, meant the first agent printed by
+<code>list agents</code>. Similarly action 0 would mean the first action within
+that agent.</p>
+<p>Next lets look at log insertions...​</p>
+<p><strong>Insert Log.</strong></p>
+<div class="codehilite"><pre><span></span><code>lightrunc log <span class="m">0</span> Main.java:10 <span class="s2">&quot;Array size {arr.length}&quot;</span>
+</code></pre></div>
+
+<p>This command inserts a new log to the first agent. The log will print
+\"Array size \" followed by the result of the expression <code>arr.length</code>.
+This will only work with the first agent has a class compiled from
+<code>Main.java</code> and has a variable called <code>arr</code> defined in line 10.</p>
+<p>::: {.tip}
+Inserted logs have default expiration timeout of 24 hours
+:::</p>
+<p>Lets say that we have more than one agent and we want to apply this to a
+tag instead of a specific agent. We can do this:</p>
+<p><strong>Insert Log to Tag.</strong></p>
+<div class="codehilite"><pre><span></span><code>lightrunc log tag:TagName Main.java:10 <span class="s2">&quot;Array size {arr.length}&quot;</span>
+</code></pre></div>
+
+<p>All CLI commands can be used with tags instead of agent IDs. Just use
+the syntax <code>tag:TagName</code> and replace the word <code>TagName</code> with the
+appropriate tag.</p>
+<p>For most cases this is pretty trivial the only difference is for
+commands such as list where we need to do this:</p>
+<p><strong>List all the tags.</strong></p>
+<div class="codehilite"><pre><span></span><code>lightrunc list tags
+</code></pre></div>
+
+<p>Every action can have a condition, this is often recommended to avoid
+too much information/overhead and to narrow the information.</p>
+<p><strong>Conditional Log.</strong></p>
+<div class="codehilite"><pre><span></span><code>lightrunc clog 5c6e9cdef4e833279ee286a1 Main.java:10  <span class="s2">&quot;i % 10 == 0&quot;</span> <span class="s2">&quot;Array size {arr.length}&quot;</span>
+</code></pre></div>
+
+<p>The log above will be printed when the expression <code>i % 10 == 0</code> will be
+evaluated to <code>true</code>.</p>
+<p>Once we're done with an action we need to clean up. Here's where the
+<code>rm</code> command comes in handy:</p>
+<p><strong>Remove Command.</strong></p>
+<div class="codehilite"><pre><span></span><code>lightrunc rm <span class="m">0</span> <span class="m">0</span>
+</code></pre></div>
+
+<p>This removes the first action from the first agent.</p>
+<p>::: {.note}
+This works for tags and full IDs as well
+:::</p>
+<p>Lightrun comes with a special tool to \"pull the plug\" and disable
+Lightrun. If there are issues where we want to rule out Lightruns blame
+we can use detach to disable all agents:</p>
+<p><strong>Detaches all Agents.</strong></p>
+<div class="codehilite"><pre><span></span><code>lightrunc detach on
+</code></pre></div>
+
+<p><strong>Re-enable agents.</strong></p>
+<div class="codehilite"><pre><span></span><code>lightrunc detach off
+</code></pre></div>
+
+<p><strong>Create company by Admin.</strong></p>
+<div class="codehilite"><pre><span></span><code>lightrunc create-company &lt;Name&gt; &lt;LicenseExpiry dd/MM/yyyy&gt; &lt;LicensedAgents&gt; &lt;AgentsEnabled&gt;
+</code></pre></div>
+
+<ul>
+<li>
+<p>\&lt;LicenseExpiry> Date, license expiration date. After expired,
+    agents can't register.</p>
+</li>
+<li>
+<p>\&lt;LicensedAgents> Numeric, Max number of allowed agents.</p>
+</li>
+<li>
+<p>\&lt;AgentsEnabled> Boolean, indicates whether agents are enabled in
+    the company.</p>
+</li>
+</ul>
+<p>This will create a new company with an agent user.</p>
+<p><strong>Create user by Admin or Manager.</strong></p>
+<div class="codehilite"><pre><span></span><code>create-user &lt;Username&gt; &lt;FirstName&gt; &lt;LastName&gt; &lt;Email&gt; &lt;CompanyName&gt; &lt;Role1&gt; &lt;Role2&gt;...
+</code></pre></div>
+
+<ul>
+<li>
+<p>\&lt;Username> and \&lt;Email> should be unique globally</p>
+</li>
+<li>
+<p>\&lt;RoleX> should be one of the following: [ROLE_ADMIN,
+    ROLE_MANAGER, ROLE_USER]. Only Admin is authorized to create a user
+    with ROLE_AGENT.</p>
+</li>
+</ul>
+<p>This will create a new user in the given company.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../userexceptions/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                View exceptions as a user
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../cli-manage/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                CLI Reference
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy  2020, Lightrun.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

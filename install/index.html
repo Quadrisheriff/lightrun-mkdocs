@@ -1,0 +1,624 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lightrun mkdocs website">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="..">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>Installation - Lightrun</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ab47bd">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="purple" data-md-color-accent="blue">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spin-the-server-up-and-down" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Lightrun" class="md-header-nav__button md-logo" aria-label="Lightrun">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Lightrun
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Installation
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Lightrun" class="md-nav__button md-logo" aria-label="Lightrun">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Lightrun
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../opensource/" class="md-nav__link">
+      Lightrun license use
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Installation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Installation
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spin-the-server-up-and-down" class="md-nav__link">
+    Spin the server up and down
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-in-to-lightrun" class="md-nav__link">
+    Log in to Lightrun
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-the-agent" class="md-nav__link">
+    Deploy the agent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attach-the-agent" class="md-nav__link">
+    Attach the agent
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../demo/" class="md-nav__link">
+      Quick start tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../plugin/" class="md-nav__link">
+      Using lightrun in your workflow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../integrations.md" class="md-nav__link">
+      Integrations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../server-integrations/" class="md-nav__link">
+      Server-side integrations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install-client/" class="md-nav__link">
+      Install the plugin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../useradmin/" class="md-nav__link">
+      Manage users
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../adminexceptions/" class="md-nav__link">
+      Configure and monitor exceptions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../agentadmin/" class="md-nav__link">
+      Agent administration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../userexceptions/" class="md-nav__link">
+      View exceptions as a user
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cli/" class="md-nav__link">
+      CLI Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cli-manage/" class="md-nav__link">
+      CLI Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../alerts/" class="md-nav__link">
+      Alerting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshooting/" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../server-setup/" class="md-nav__link">
+      Start debugging with your team
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spin-the-server-up-and-down" class="md-nav__link">
+    Spin the server up and down
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-in-to-lightrun" class="md-nav__link">
+    Log in to Lightrun
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-the-agent" class="md-nav__link">
+    Deploy the agent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attach-the-agent" class="md-nav__link">
+    Attach the agent
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Installation</h1>
+                
+                <p>When you're ready to get rolling, Lightrun sets up the backend server for you and issues an admin account. Thereafter, you can: 
+- <a href="installation#spin-the-server-up-and-down">Spin the server up and down</a>
+- <a href="installation#log-in-to-lightrun">Log in to Lightrun</a>
+- <a href="installation#deploy-the-application-server-side-agent">Deploy the application server-side agent</a></p>
+<h2 id="spin-the-server-up-and-down">Spin the server up and down<a class="headerlink" href="#spin-the-server-up-and-down" title="Permanent link">&para;</a></h2>
+<p>You can run the backend server on any host using a docker-compose or other container orchestration tool such as Kubernetes, Docker Swarm or Rancher.  </p>
+<ol>
+<li>By default, the backend is configured to run over port 8080. If this port is unavailable, change the port number from the docker-compose file.</li>
+<li>Copy the two <code>yml</code> files that Lightrun provided at installation into an empty directory and execute the following:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> <span class="o">{</span>docker-compose-directory<span class="o">}</span>
+docker-compose up -d
+</code></pre></div>
+
+<h2 id="log-in-to-lightrun">Log in to Lightrun<a class="headerlink" href="#log-in-to-lightrun" title="Permanent link">&para;</a></h2>
+<ol>
+<li>The backend installed by Lightrun defaults to port 8080 and requires HTTPS. Log in to your Lightrun instance with your admin credentials at <a href="https://192.168.1.108:8080/">https://192.168.1.108:8080/</a>. </li>
+</ol>
+<p><strong>Note:</strong> Be sure to change the port number if you changed the configuration from your docker-compose file. </p>
+<p><strong>Note:</strong> SSL certificates can be applied to domains only. Therefore, the page loads with an HTTPS warning. 
+2. Add an exception for this URL in order to bypass the certificate warning that loads. 
+   The landing page loads with <em>customized</em> installation instructions for the agent, plugin and CLI.</p>
+<h2 id="deploy-the-agent">Deploy the agent<a class="headerlink" href="#deploy-the-agent" title="Permanent link">&para;</a></h2>
+<p>Once you've logged in to the backend server, the agent can be downloaded and deployed on your application servers.</p>
+<p>Copy the following code <em>from the welcome page</em> which loads with the customized <code>server IP</code> and <code>port</code> values when you log in. </p>
+<div class="codehilite"><pre><span></span><code>wget --no-check-certificate https://server-ip:8080/content/files/agent.zip<span class="p">&amp;</span><span class="nv">host</span><span class="o">=</span>server-ip<span class="p">&amp;</span><span class="nv">port</span><span class="o">=</span><span class="m">8080</span> -O agent.zip
+mkdir agent
+unzip agent.zip -d agent
+</code></pre></div>
+
+<p><strong>Tip:</strong> Check out the content of the file <code>agent/agent.config</code>. It includes many options, including the backend server URL.</p>
+<h2 id="attach-the-agent">Attach the agent<a class="headerlink" href="#attach-the-agent" title="Permanent link">&para;</a></h2>
+<p>Once you've deployed the agent to your application servers, you should add it to your application as follows: </p>
+<p><strong>Note:</strong> Lightrun currently supports Java applications.</p>
+<ol>
+<li>From the application server, navigate to the folder where your application resides. </li>
+<li>Copy the following code:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code>java -agentpath:/path/to/agent/lightrun_agent.so RestOfTheArgumentsHere
+</code></pre></div>
+
+<ol>
+<li>Replace the <code>agentpath</code> value with the path to the Lightrun agent where you downloaded it and replace <code>RestOfTheArgumentsHere</code> with the name of your application and then run the command. </li>
+</ol>
+<p>OR</p>
+<p>Add the <code>JAVA_OPTS</code> environment variable to the server so that all Java processes launched on that server have an agent attached. Copy the following command from the server and replace the <code>agentpath</code> value with the path to the Lightrun agent where you downloaded it:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">JAVA_OPTS</span><span class="o">=</span>-agentpath:/path/to/agent/lightrun_agent.so
+</code></pre></div>
+
+<p>Once an agent is up and running, you and your team can install the IntelliJ plugin.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../opensource/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lightrun license use
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../demo/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Quick start tutorial
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy  2020, Lightrun.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

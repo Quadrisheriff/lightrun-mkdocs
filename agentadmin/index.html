@@ -1,0 +1,902 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lightrun mkdocs website">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="..">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>Agent administration - Lightrun</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ab47bd">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="purple" data-md-color-accent="blue">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tagging-_tagging" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Lightrun" class="md-header-nav__button md-logo" aria-label="Lightrun">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Lightrun
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Agent administration
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Lightrun" class="md-nav__button md-logo" aria-label="Lightrun">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Lightrun
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../opensource/" class="md-nav__link">
+      Lightrun license use
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../demo/" class="md-nav__link">
+      Quick start tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../plugin/" class="md-nav__link">
+      Using lightrun in your workflow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../integrations.md" class="md-nav__link">
+      Integrations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../server-integrations/" class="md-nav__link">
+      Server-side integrations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install-client/" class="md-nav__link">
+      Install the plugin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../useradmin/" class="md-nav__link">
+      Manage users
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../adminexceptions/" class="md-nav__link">
+      Configure and monitor exceptions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Agent administration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Agent administration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tagging-_tagging" class="md-nav__link">
+    Tagging {#_tagging}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization-_customization" class="md-nav__link">
+    Customization {#_customization}
+  </a>
+  
+    <nav class="md-nav" aria-label="Customization {#_customization}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-logger-_dynamic_logger" class="md-nav__link">
+    Dynamic Logger {#_dynamic_logger}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-config-_agent_config" class="md-nav__link">
+    Agent Config {#_agent_config}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-command-line-arguments-_agent_command_line_arguments" class="md-nav__link">
+    Agent Command line arguments {#_agent_command_line_arguments}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-_metrics" class="md-nav__link">
+    Metrics {#_metrics}
+  </a>
+  
+    <nav class="md-nav" aria-label="Metrics {#_metrics}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statsd-_statsd" class="md-nav__link">
+    StatsD {#_statsd}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../userexceptions/" class="md-nav__link">
+      View exceptions as a user
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cli/" class="md-nav__link">
+      CLI Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cli-manage/" class="md-nav__link">
+      CLI Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../alerts/" class="md-nav__link">
+      Alerting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshooting/" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../server-setup/" class="md-nav__link">
+      Start debugging with your team
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tagging-_tagging" class="md-nav__link">
+    Tagging {#_tagging}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization-_customization" class="md-nav__link">
+    Customization {#_customization}
+  </a>
+  
+    <nav class="md-nav" aria-label="Customization {#_customization}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-logger-_dynamic_logger" class="md-nav__link">
+    Dynamic Logger {#_dynamic_logger}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-config-_agent_config" class="md-nav__link">
+    Agent Config {#_agent_config}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-command-line-arguments-_agent_command_line_arguments" class="md-nav__link">
+    Agent Command line arguments {#_agent_command_line_arguments}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-_metrics" class="md-nav__link">
+    Metrics {#_metrics}
+  </a>
+  
+    <nav class="md-nav" aria-label="Metrics {#_metrics}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statsd-_statsd" class="md-nav__link">
+    StatsD {#_statsd}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Agent administration</h1>
+                
+                <p>The agent is at the core of Lightrun. Setting up agents is the most important task once the backend is in place.</p>
+<p>::: {.tip}
+For elaborate agent setups please check out the <a href="integration.xml#integrations">Agent Integrations</a>.
+:::</p>
+<h2 id="tagging-_tagging">Tagging {#_tagging}<a class="headerlink" href="#tagging-_tagging" title="Permanent link">&para;</a></h2>
+<p>Tagging lets us group agents together for common functionality under a meaningful name. E.g. Database Servers, Staging, 18GB Machines etc.</p>
+<p>We can use any set of tags to define an agent. This would allow binding actions to an agent even before it was launched as well as applying an action to a cross section of servers.</p>
+<p>We tag an agent by editing the file <code>agent.metadata.json</code> e.g.:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;registration&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ProductionsAgents&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;JDK1.8&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Ubuntu16&quot;</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>We can add/remove entries within the \"tags\" section.</p>
+<p>::: {.note}
+Changes to this file aren't detected dynamically. An agent restart would be required
+:::</p>
+<p>Once we bind an action to a tag it will be added implicitly to the tagged agents. This can be useful for many cases. E.g. integration tests can execute with a specific tag, that lets us debug an integration test failure by binding an action based on a tag.</p>
+<p>Tags can also be defined in the command line e.g.</p>
+<div class="codehilite"><pre><span></span><code>java -Dlightrun.registration.tags<span class="o">=</span>myTag -agentpath:/path/to/agent/lightrun_agent.so RestOfTheArgumentsHere
+</code></pre></div>
+
+<h2 id="customization-_customization">Customization {#_customization}<a class="headerlink" href="#customization-_customization" title="Permanent link">&para;</a></h2>
+<h3 id="dynamic-logger-_dynamic_logger">Dynamic Logger {#_dynamic_logger}<a class="headerlink" href="#dynamic-logger-_dynamic_logger" title="Permanent link">&para;</a></h3>
+<p>The inserted logs are printed using <code>java.util.logging</code> logger. You can
+customize the log prints by adding
+<code>-Djava.util.logging.config.file=/path/to/app.properties</code> to the command
+line.</p>
+<h3 id="agent-config-_agent_config">Agent Config {#_agent_config}<a class="headerlink" href="#agent-config-_agent_config" title="Permanent link">&para;</a></h3>
+<p>There are a few parameters we can tune in order to change the agent
+configuration. The configuration file is located under
+<code>&lt;install_dir&gt;/agent/agent.config</code>.</p>
+<p>+-----------------------------------+-----------------------------------+
+| Parameter Name                    | Explanation                       |
++===================================+===================================+
+| <code>max_dynamic_log_rate</code>            | Number of log prints per second   |
+|                                   | (on average).                     |
++-----------------------------------+-----------------------------------+
+| <code>max_dynamic_log_bytes_rate</code>      | Number of bytes per second (on    |
+|                                   | average).                         |
++-----------------------------------+-----------------------------------+
+| <code>log_stats_time_micros</code>           | How often to log debugger         |
+|                                   | performance stats.                |
++-----------------------------------+-----------------------------------+
+| <code>max_condition_cost</code>              | Maximum cost in percentage of CPU |
+|                                   | consumption of condition          |
+|                                   | evaluation.                       |
++-----------------------------------+-----------------------------------+
+| <code>max_log_cpu_cost</code>                | Maximum cost of dynamic logging   |
+|                                   | in percentage of CPU consumption  |
+|                                   | (short bursts are allowed).       |
++-----------------------------------+-----------------------------------+
+| <code>max_snapshot_buffer_size</code>        | The total size in bytes we allow  |
+|                                   | to evaluate when capturing a      |
+|                                   | snapshot                          |
++-----------------------------------+-----------------------------------+
+| <code>max_snapshot_frame_count</code>        | Max frame count we allow to       |
+|                                   | collect data from when capturing  |
+|                                   | a snapshot                        |
++-----------------------------------+-----------------------------------+
+| <code>breakpoint_expiration_sec</code>       | Breakpoint \ Dynamic log         |
+|                                   | expiration in seconds.            |
++-----------------------------------+-----------------------------------+
+| <code>dynamic_log_quota_recovery_ms</code>   | Time to pause dynamic log after   |
+|                                   | it runs out of quota.             |
++-----------------------------------+-----------------------------------+
+| <code>no_check_certificate</code>            | Disable certificate pinning when  |
+|                                   | accessing the backend             |
++-----------------------------------+-----------------------------------+
+| <code>ignore_quota</code>                    | Disable all performance safe      |
+|                                   | guards when evaluating a          |
+|                                   | breakpoint. <strong>Not Recommended</strong>   |
++-----------------------------------+-----------------------------------+
+| <code>exceptions_monitoring_enabled</code>   | Enable the capturing of the       |
+|                                   | application's exceptions          |
++-----------------------------------+-----------------------------------+
+| <code>exceptions_monitoring_stdout</code>    | Print all of the captured         |
+|                                   | exceptions to the standard output |
++-----------------------------------+-----------------------------------+
+| <code>exceptions_report_percentage</code>    | Process and report only this      |
+|                                   | percentage of the exceptions      |
+|                                   | thrown by the debuggee (A float   |
+|                                   | between 0 and 1.0).               |
++-----------------------------------+-----------------------------------+
+| <code>exceptions_should_report_caught</code> | Report exceptions that were       |
+|                                   | caught by the application as well |
+|                                   | as exceptions that remained       |
+|                                   | uncaught                          |
++-----------------------------------+-----------------------------------+
+| <code>exceptions_max_buffer_size</code>      | The total size in bytes we allow  |
+|                                   | to evaluate when capturing an     |
+|                                   | excpetion (Same as snapshot)      |
++-----------------------------------+-----------------------------------+
+| <code>ex                               | Max frame count we allow to       |
+| ceptions_stack_trace_frame_count</code> | collect data from when capturing  |
+|                                   | an excpetion (Same as snapshot)   |
++-----------------------------------+-----------------------------------+
+| <code>enable_pii_redaction</code>            | Enable PII redaction in the       |
+|                                   | agent's side (may have an effect  |
+|                                   | on the application's performance) |
++-----------------------------------+-----------------------------------+</p>
+<h3 id="agent-command-line-arguments-_agent_command_line_arguments">Agent Command line arguments {#_agent_command_line_arguments}<a class="headerlink" href="#agent-command-line-arguments-_agent_command_line_arguments" title="Permanent link">&para;</a></h3>
+<p>Some configurations can be changed with a command line argument. The
+command line args come after the agent's path and are separated by a
+comma:
+<code>`-agentpath:&lt;path-to-agent&gt;/lightrun_agent.so=--lightrun_wait_for_init,--lightrun_init_wait_time_ms=5000`</code></p>
+<p>+----------------------+----------------------+-----------------------+
+| Parameter Name       | Explanation          | Type                  |
++======================+======================+=======================+
+| <code>hub_retry_delay_ms</code> | amount of time in    | int32                 |
+|                      | milliseconds to      |                       |
+|                      | sleep before         |                       |
+|                      | retrying failed      |                       |
+|                      | requests to backend  |                       |
++----------------------+----------------------+-----------------------+
+| <code>debugge             | amount of time in    | int32                 |
+| e_disabled_delay_ms</code> | milliseconds to      |                       |
+|                      | sleep before         |                       |
+|                      | checking whether the |                       |
+|                      | debugger was enabled |                       |
+|                      | back                 |                       |
++----------------------+----------------------+-----------------------+
+| <code>lightr              | additional           | string                |
+| un_extra_class_path</code> | directories and      |                       |
+|                      | files containing     |                       |
+|                      | resolvable binaries  |                       |
++----------------------+----------------------+-----------------------+
+| <code>lightru             | timeout for wait if  | int32                 |
+| n_init_wait_time_ms</code> | li                   |                       |
+|                      | ghtrun_wait_for_init |                       |
+|                      | is set               |                       |
++----------------------+----------------------+-----------------------+
+| <code>lig                 | Block application    | bool                  |
+| htrun_wait_for_init</code> | until first time of  |                       |
+|                      | fetching breakpoints |                       |
+|                      | from the server      |                       |
++----------------------+----------------------+-----------------------+
+| <code>enable_safe_caller</code> | Allows any method    | bool                  |
+|                      | without side effects |                       |
+|                      | in expressions       |                       |
++----------------------+----------------------+-----------------------+
+| <code>ex                  | Additional methods   | string                |
+| tra_blocked_methods</code> | to block for testing |                       |
+|                      | purposes             |                       |
++----------------------+----------------------+-----------------------+
+| <code>ex                  | Additional methods   | string                |
+| tra_allowed_methods</code> | to allowed for       |                       |
+|                      | testing purposes     |                       |
++----------------------+----------------------+-----------------------+
+| <code>extra_              | Internal names of    | string                |
+| whitelisted_classes</code> | additional classes   |                       |
+|                      | to allow for testing |                       |
+|                      | purposes             |                       |
++----------------------+----------------------+-----------------------+
+| <code>expression_max      | Maximum number of    | int32                 |
+| _classes_load_quota</code> | classes that the     |                       |
+|                      | NanoJava interpreter |                       |
+|                      | is allowed to load   |                       |
+|                      | while evaluating a   |                       |
+|                      | single breakpoint    |                       |
+|                      | expression           |                       |
++----------------------+----------------------+-----------------------+
+| <code>expres              | Maximum number of    | int32                 |
+| sion_max_interpreter | instructions that    |                       |
+| _instructions_quota</code> | the NanoJava         |                       |
+|                      | interpreter is       |                       |
+|                      | allowed to execute   |                       |
+|                      | while evaluating a   |                       |
+|                      | single breakpoint    |                       |
+|                      | expression           |                       |
++----------------------+----------------------+-----------------------+
+| <code>pretty_printers_max | Maximum number of    | int32                 |
+| _classes_load_quota</code> | classes that the     |                       |
+|                      | NanoJava interpreter |                       |
+|                      | is allowed to load   |                       |
+|                      | while formatting     |                       |
+|                      | some well known data |                       |
+|                      | structures           |                       |
++----------------------+----------------------+-----------------------+
+| <code>pretty_prin         | Maximum number of    | int32                 |
+| ters_max_interpreter | instructions that    |                       |
+| _instructions_quota</code> | the NanoJava         |                       |
+|                      | interpreter is       |                       |
+|                      | allowed to execute   |                       |
+|                      | while formatting     |                       |
+|                      | some well known data |                       |
+|                      | structures           |                       |
++----------------------+----------------------+-----------------------+
+| <code>dynamic_log_max     | Maximum number of    | int32                 |
+| _classes_load_quota</code> | classes that the     |                       |
+|                      | NanoJava interpreter |                       |
+|                      | is allowed to load   |                       |
+|                      | while evaluating all |                       |
+|                      | expressions in a     |                       |
+|                      | single dynamic log   |                       |
+|                      | statement            |                       |
++----------------------+----------------------+-----------------------+
+| <code>dynamic             | Maximum number of    | int32                 |
+| _log_max_interpreter | instructions that    |                       |
+| _instructions_quota</code> | the NanoJava         |                       |
+|                      | interpreter is       |                       |
+|                      | allowed to execute   |                       |
+|                      | while evaluating all |                       |
+|                      | expressions in a     |                       |
+|                      | single dynamic log   |                       |
++----------------------+----------------------+-----------------------+
+| <code>safe_caller         | Maximum allowed size | int32                 |
+| _max_array_elements</code> | of the array to copy |                       |
+|                      | or allocate in safe  |                       |
+|                      | caller (copying or   |                       |
+|                      | allocating larger    |                       |
+|                      | arrays is considered |                       |
+|                      | to be too expensive  |                       |
+|                      | MISSING              |                       |
++----------------------+----------------------+-----------------------+
+| <code>| Maximum stack depth  | int32                 |
+| safe_caller_max_inte | that safe caller     |                       |
+| rpreter_stack_depth</code> | will allow           |                       |
++----------------------+----------------------+-----------------------+
+| <code>cdbg                | additional text to   | string                |
+| _description_suffix</code> | be appended to       |                       |
+|                      | debuggee description |                       |
++----------------------+----------------------+-----------------------+
+| <code>cdbg_cla            | Cache size for class | int32                 |
+| ss_files_cache_size</code> | files used in safe   |                       |
+|                      | method caller        |                       |
++----------------------+----------------------+-----------------------+
+| <code>cdbg_ma             | Use this value when  | int32                 |
+| x_instructions_high</code> | ignoring quota       |                       |
++----------------------+----------------------+-----------------------+
+| <code>c                   | Maximum number of    | int32                 |
+| dbg_max_stack_depth</code> | stack frames to      |                       |
+|                      | unwind               |                       |
++----------------------+----------------------+-----------------------+</p>
+<h3 id="metrics-_metrics">Metrics {#_metrics}<a class="headerlink" href="#metrics-_metrics" title="Permanent link">&para;</a></h3>
+<p>The agent runs alongside a production application. Hence, it's crucial
+to monitor and collect important metrics about the overhead of the
+agent.</p>
+<p>The agent prints to it's own log file (usually
+<code>/tmp/lightrun_java_agent.INFO</code>) statistics every
+<code>log_stats_time_micros</code> microseconds.</p>
+<p>Listed below are some reported metrics based on the agents logfile.</p>
+<h4 id="statsd-_statsd">StatsD {#_statsd}<a class="headerlink" href="#statsd-_statsd" title="Permanent link">&para;</a></h4>
+<p><code>Statsd</code> is a network deamon listens for statistics over UDP or TCP and
+aggregates the data into different backends (e.g Graphite).</p>
+<p>There's a short script that performs on-line metric scraping from agent
+log file (usually <code>/tmp/lightrun_java_agent.INFO</code>).</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> &lt;install-dir&gt;/agent/stats/
+./statsd_reporter.py --host &lt;statsd-hostname&gt; --port &lt;statsd-port&gt; --logfile &lt;agent-log-file.txt&gt;
+</code></pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../adminexceptions/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Configure and monitor exceptions
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../userexceptions/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                View exceptions as a user
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy  2020, Lightrun.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

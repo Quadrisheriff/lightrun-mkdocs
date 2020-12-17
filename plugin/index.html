@@ -1,0 +1,701 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lightrun mkdocs website">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="..">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>Using Lightrun in your workflow - Lightrun</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ab47bd">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="purple" data-md-color-accent="blue">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prerequisites" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Lightrun" class="md-header-nav__button md-logo" aria-label="Lightrun">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Lightrun
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Using Lightrun in your workflow
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Lightrun" class="md-nav__button md-logo" aria-label="Lightrun">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Lightrun
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../opensource/" class="md-nav__link">
+      Lightrun license use
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../demo/" class="md-nav__link">
+      Quick start tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Using lightrun in your workflow
+    </a>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../integrations.md" class="md-nav__link">
+      Integrations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../server-integrations/" class="md-nav__link">
+      Server-side integrations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install-client/" class="md-nav__link">
+      Install the plugin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../useradmin/" class="md-nav__link">
+      Manage users
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../adminexceptions/" class="md-nav__link">
+      Configure and monitor exceptions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../agentadmin/" class="md-nav__link">
+      Agent administration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../userexceptions/" class="md-nav__link">
+      View exceptions as a user
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cli/" class="md-nav__link">
+      CLI Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cli-manage/" class="md-nav__link">
+      CLI Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../alerts/" class="md-nav__link">
+      Alerting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshooting/" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../server-setup/" class="md-nav__link">
+      Start debugging with your team
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <p>Use IntelliJ plugin to integrate debugging with your development workflow.</p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<p>To use the plugin, make sure you:
+- Your admin needs <a href="../install/">to install and configure the agent and register it</a> from the relevant app server 
+- <a href="../install-client/">Install the plugin in your local IntelliJ instance</a></p>
+<h1 id="make-sure-youre-connected-to-lightrun">Make sure you're connected to Lightrun<a class="headerlink" href="#make-sure-youre-connected-to-lightrun" title="Permanent link">&para;</a></h1>
+<hr />
+<ol>
+<li>From IntelliJ, click the sidedrawer to expand it. </li>
+<li>Click the red panel from the top of the plugin display. </li>
+</ol>
+<p><img alt="Login from IntelliJ" src="../img/login-intellij.png" /></p>
+<p>The browser opens to the Lightrun login page:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="p">[</span><span class="n">Login</span> <span class="n">Dialog</span><span class="p">](..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">img</span><span class="o">/</span><span class="n">login</span><span class="o">-</span><span class="n">dialog</span><span class="p">.</span><span class="n">png</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Once we log in successfully the status button on the top right corner
+should turn green:</p>
+<p><img alt="Status Button" src="../../img/login-success.png" /></p>
+<p>At this point the right click context menu changes and should include
+additional options as such:</p>
+<p><img alt="Right Click Context Menu" src="../../img/context-menu.png" /></p>
+<h2 id="usage-_usage">Usage {#_usage}<a class="headerlink" href="#usage-_usage" title="Permanent link">&para;</a></h2>
+<p>::: {.important}
+The plugin will hide options if there are no agents connected to the
+backend and no tags
+:::</p>
+<p>On the right side we see the Lightrun side drawer. It includes a tree of
+agents/tags and the actions connected to them:</p>
+<p><img alt="The Lightrun Drawer" src="../../img/drawer.png" /></p>
+<p>::: {.tip}
+This drawer can be folded to save screen real estate
+:::</p>
+<p>The drawer includes all the high level information you might need:</p>
+<p><img alt="Search" src="../../img/search-annotated.jpg" /></p>
+<p>We can search within agents and action below and the list updates
+immediately based on the search query. When we have multiple logs on
+multiple agents this can be very useful.</p>
+<p><img alt="Agent Details" src="../../img/agent-annotated.jpg" /></p>
+<p>We have multiple indicators and capabilities for every agent. Most of
+these are applicable for actions under tags as well so we'll focus only
+on the agent here:</p>
+<ul>
+<li>
+<p>Tags --- this is the list of tags for this agent. Notice that it's
+    cropped. To see all the tags we will need to expand the drawer or
+    click the details (info) icon to see the list of tags there</p>
+</li>
+<li>
+<p>Details --- shows the information dialog for the agent/action</p>
+</li>
+<li>
+<p>Hide Logs --- Logs might be intrusive in the IDE UI. We can
+    fold/hide them using this button. Notice it works recursively and
+    will apply to the hierarchy below</p>
+</li>
+<li>
+<p>Pipe Logs --- By default Lightrun logs into the same logger used by
+    the host applicaion. However, it has 3 modes: <code>Server Only</code> (the
+    default), <code>Plugin Only</code> and <code>Both</code>. When set to <code>Plugin Only</code> or
+    <code>Both</code> logs added to this agent will show in the Lightrun console</p>
+</li>
+<li>
+<p>Delete Action --- Allows us to delete an action. Notice that actions
+    defined in a tag can be deleted through the tag only</p>
+</li>
+<li>
+<p>Go to Line --- Jumps to the source/line number associated with the
+    action</p>
+</li>
+<li>
+<p>Status Indicator --- Indicates the current state of the action. One
+    check box indicates the action was submitted to the server. Two
+    check boxes indicate that it was received by the agent. Highlighted
+    checkboxes indicate that the agent accepted the action and deems it
+    valid</p>
+</li>
+<li>
+<p>Log Level Indicator --- Indicates the log level from Info to Error</p>
+</li>
+</ul>
+<p>When we press the details button on an agent we can see the following
+dialog with details about the piping mode, tags etc:</p>
+<p><img alt="Agent Info" src="../../img/agent-info.png" /></p>
+<p>This is the equivalent dialog for a log entry:</p>
+<p><img alt="Action Info" src="../../img/action-info.png" /></p>
+<h3 id="adding-an-action-_adding_an_action">Adding an Action {#_adding_an_action}<a class="headerlink" href="#adding-an-action-_adding_an_action" title="Permanent link">&para;</a></h3>
+<p>All actions are added via the right click menu. Select a specific line
+in the code, right click and select the appropriate action e.g. Log as
+shown here:</p>
+<p><img alt="Add a Log" src="../../img/new-log.png" /></p>
+<p>There are several options in the new/edit log dialog:</p>
+<ul>
+<li>
+<p>Agent --- The agent or tag to which we will bind the action</p>
+</li>
+<li>
+<p>File/Line --- The actions position in the code</p>
+</li>
+<li>
+<p>Format --- This is the actual log string. Notice we can use
+    expressions such as <code>My variable is {var}</code> including even method
+    invocations such as: <code>Method value: {myMethod() + 5}</code></p>
+</li>
+<li>
+<p>Log Level --- One of \"Debug\", \"Info\", \"Warning\" or \"Error\".
+    We can then filter the logs based on this level</p>
+</li>
+<li>
+<p>Condition --- an expression that limits the action, this is
+    effectively the condition of an <code>if</code> statement we can use to limit
+    the execution of the action e.g.: <code>myVar % 7 == 0</code> will limit the
+    log so it will print only for variables that divide by 7</p>
+</li>
+</ul>
+<p>Once we press OK a log is added to the area above the line:</p>
+<p><img alt="Log Entry" src="../../img/log-entry.png" /></p>
+<p>::: {.tip}
+The picture on the left can be customized the at
+<a href="https://en.gravatar.com/">gravatar.com</a>
+:::</p>
+<p>Clicking the log lets us delete or edit it.</p>
+<p>Almost all of this applies to the other actions supported by Lightrun.
+So we'll review the other options by focusing on how they differ from
+logs.</p>
+<h4 id="snapshot-breakpoint-_snapshot_breakpoint">Snapshot (Breakpoint) {#_snapshot_breakpoint}<a class="headerlink" href="#snapshot-breakpoint-_snapshot_breakpoint" title="Permanent link">&para;</a></h4>
+<p>A snapshot is a one time \"breakpoint\" that doesn't block. It just
+grabs the stack trace and variables then proceeds on its way.</p>
+<p><img alt="Adding a Snapshot" src="../../img/add-snapshot.png" /></p>
+<p>Format and log level aren't needed in snapshots so they're unavailable
+here. However, we have the expression list which lets us pick
+expressions we wish to add to the snapshot.</p>
+<p>The added snapshot is displayed in the gutter on the left side:</p>
+<p><img alt="Snapshot Icon" src="../../img/snapshot-gutter.png" /></p>
+<p>When the snapshot receives a hit it's shown in the bottom area of the
+window in the <em>Lightrun Snapshots</em> area.</p>
+<p><img alt="Snapshot Result" src="../../img/snapshot.png" /></p>
+<p>The snapshot result should be familiar to IntelliJ users as it's based
+on the design of the debugger UI. The navigable stack trace is on the
+left and the variable values are on the right. Watch expressions also
+appear on the right hand side.</p>
+<p>When the snapshot is deleted the content of the captured stack is also
+removed.</p>
+<h4 id="counter-_counter">Counter {#_counter}<a class="headerlink" href="#counter-_counter" title="Permanent link">&para;</a></h4>
+<p>We often want to know the number of times a specific line of code was
+hit especially in comparison to a different line of code. This can be
+very useful in debugging issues and especially in tracking performance
+problems.</p>
+<p>Counter does just that. It counts every time the given line was reached
+and periodically logs that information to the standard logger.</p>
+<p><img alt="Adding a Counter" src="../../img/counter.png" /></p>
+<p>A counter doesn't have a format but it has a name which is used to in
+the printouts to distinguish one counter from another.</p>
+<p>::: {.tip}
+Counter is impacted by the piping mode, so we can pipe the counter calls
+to the IDE for convenience
+:::</p>
+<h4 id="set-value-_set_value">Set-Value {#_set_value}<a class="headerlink" href="#set-value-_set_value" title="Permanent link">&para;</a></h4>
+<p>One trick in debugging is the ability to set a variable to a different
+value and force a specific code path. In our case this takes a much
+deeper meaning of patching broken behavior. E.g. if a feature fails and
+it's surrounded by an if statement we might be able to disable that
+feature by setting the value of a variable.</p>
+<p>This is an extremely risky proposition and as such it requires the
+set-value role for a user. Otherwise the feature isn't available or even
+visible.</p>
+<p>When adding a set-value action we define a left side argument which is
+the variable name and a right side element which is the value assigned.
+The latter can be any valid expression including a method invocation.</p>
+<p><img alt="Adding a Set-Value" src="../../img/set-value.png" /></p>
+<p>::: {.important}
+Quotas aren't imposed on set-value operations and as such the
+performance impact can be significant. Use this feature with caution
+:::</p>
+<h2 id="lightrun-consolelog-piping-_lightrun_consolelog_piping">Lightrun Console/Log Piping {#_lightrun_consolelog_piping}<a class="headerlink" href="#lightrun-consolelog-piping-_lightrun_consolelog_piping" title="Permanent link">&para;</a></h2>
+<p>Lightrun logs are normally printed into the standard logging framework.
+This is quite valuable as logs can be seen in the context of
+pre-existing log statements which might provide further nuance to solve
+the problem.</p>
+<p>However, in some cases a developer might want to see the log output in
+the IDE. For that we have the Lightrun Console at the bottom of the
+screen:</p>
+<p><img alt="Lightrun Console" src="../../img/console.png" /></p>
+<p>Logs created by Lightrun can be redirected to the console where we can
+search and filter them. To do that we need to define log piping which we
+define on a per-agent basis.</p>
+<p><img alt="Log Piping" src="../../img/log-piping.png" /></p>
+<p>There are 3 levels of log piping:</p>
+<ul>
+<li>
+<p>App</p>
+</li>
+<li>
+<p>Plugin</p>
+</li>
+<li>
+<p>Both</p>
+</li>
+</ul>
+<p>App indicates the logs appear only in the Java application as they do by
+default. They just go to the standard logger.</p>
+<p>Plugin indicates that logs won't show in the app. Instead they will
+display within the console below.</p>
+<p>Both indicates that logs wll appear both in the app and in the plugin.</p>
+<p>::: {.note}
+In order to pipe the logs they need to go from the agent to the backend
+server and to the plugin. This process is batched so logs appear in
+batches and with some delay
+:::</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../demo/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Quick start tutorial
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../server-integrations/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Server-side integrations
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy  2020, Lightrun.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

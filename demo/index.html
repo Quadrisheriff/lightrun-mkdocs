@@ -1,0 +1,1043 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lightrun mkdocs website">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="..">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>Quick start tutorial - Lightrun</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ab47bd">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="purple" data-md-color-accent="blue">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prime-numbers-counter-_prime_numbers_counter" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Lightrun" class="md-header-nav__button md-logo" aria-label="Lightrun">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Lightrun
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Quick start tutorial
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Lightrun" class="md-nav__button md-logo" aria-label="Lightrun">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Lightrun
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../opensource/" class="md-nav__link">
+      Lightrun license use
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Quick start tutorial
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Quick start tutorial
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prime-numbers-counter-_prime_numbers_counter" class="md-nav__link">
+    Prime Numbers Counter {#_prime_numbers_counter}
+  </a>
+  
+    <nav class="md-nav" aria-label="Prime Numbers Counter {#_prime_numbers_counter}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-the-application-_1_run_the_application" class="md-nav__link">
+    1. Run the application {#_1_run_the_application}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-lightruns-cli-_2_use_lightruns_cli" class="md-nav__link">
+    2. Use Lightruns CLI {#_2_use_lightruns_cli}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-app-demo-_web_app_demo" class="md-nav__link">
+    Web App Demo {#_web_app_demo}
+  </a>
+  
+    <nav class="md-nav" aria-label="Web App Demo {#_web_app_demo}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-and-run-the-web-ssrver-_build_and_run_the_web_ssrver" class="md-nav__link">
+    Build and Run the Web sSrver {#_build_and_run_the_web_ssrver}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-the-webserver-_debug_the_webserver" class="md-nav__link">
+    Debug the webserver {#_debug_the_webserver}
+  </a>
+  
+    <nav class="md-nav" aria-label="Debug the webserver {#_debug_the_webserver}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-the-application-_1_run_the_application_2" class="md-nav__link">
+    1. Run the application {#_1_run_the_application_2}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-lightruns-cli-for-log-insertion-_2_use_lightruns_cli_for_log_insertion" class="md-nav__link">
+    2. Use Lightruns CLI for log insertion {#_2_use_lightruns_cli_for_log_insertion}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerized-application-_dockerized_application" class="md-nav__link">
+    Dockerized Application {#_dockerized_application}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scala-game-of-life-_scala_game_of_life" class="md-nav__link">
+    Scala Game Of Life {#_scala_game_of_life}
+  </a>
+  
+    <nav class="md-nav" aria-label="Scala Game Of Life {#_scala_game_of_life}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-and-run-the-game-_build_and_run_the_game" class="md-nav__link">
+    Build and Run the Game {#_build_and_run_the_game}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-the-game-_debug_the_game" class="md-nav__link">
+    Debug the Game {#_debug_the_game}
+  </a>
+  
+    <nav class="md-nav" aria-label="Debug the Game {#_debug_the_game}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-the-application-_1_run_the_application_3" class="md-nav__link">
+    1. Run the application {#_1_run_the_application_3}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-lightruns-cli-for-log-insertion-_2_use_lightruns_cli_for_log_insertion_2" class="md-nav__link">
+    2. Use Lightruns CLI for log insertion {#_2_use_lightruns_cli_for_log_insertion_2}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groovy-prime-main-_groovy_prime_main" class="md-nav__link">
+    Groovy Prime Main {#_groovy_prime_main}
+  </a>
+  
+    <nav class="md-nav" aria-label="Groovy Prime Main {#_groovy_prime_main}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-the-application-_1_run_the_application_4" class="md-nav__link">
+    1. Run the application {#_1_run_the_application_4}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-lightruns-cli-for-log-insertion-_2_use_lightruns_cli_for_log_insertion_3" class="md-nav__link">
+    2. Use Lightruns CLI for log insertion {#_2_use_lightruns_cli_for_log_insertion_3}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../plugin/" class="md-nav__link">
+      Using lightrun in your workflow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../integrations.md" class="md-nav__link">
+      Integrations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../server-integrations/" class="md-nav__link">
+      Server-side integrations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install-client/" class="md-nav__link">
+      Install the plugin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../useradmin/" class="md-nav__link">
+      Manage users
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../adminexceptions/" class="md-nav__link">
+      Configure and monitor exceptions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../agentadmin/" class="md-nav__link">
+      Agent administration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../userexceptions/" class="md-nav__link">
+      View exceptions as a user
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cli/" class="md-nav__link">
+      CLI Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cli-manage/" class="md-nav__link">
+      CLI Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../alerts/" class="md-nav__link">
+      Alerting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshooting/" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../server-setup/" class="md-nav__link">
+      Start debugging with your team
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prime-numbers-counter-_prime_numbers_counter" class="md-nav__link">
+    Prime Numbers Counter {#_prime_numbers_counter}
+  </a>
+  
+    <nav class="md-nav" aria-label="Prime Numbers Counter {#_prime_numbers_counter}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-the-application-_1_run_the_application" class="md-nav__link">
+    1. Run the application {#_1_run_the_application}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-lightruns-cli-_2_use_lightruns_cli" class="md-nav__link">
+    2. Use Lightruns CLI {#_2_use_lightruns_cli}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-app-demo-_web_app_demo" class="md-nav__link">
+    Web App Demo {#_web_app_demo}
+  </a>
+  
+    <nav class="md-nav" aria-label="Web App Demo {#_web_app_demo}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-and-run-the-web-ssrver-_build_and_run_the_web_ssrver" class="md-nav__link">
+    Build and Run the Web sSrver {#_build_and_run_the_web_ssrver}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-the-webserver-_debug_the_webserver" class="md-nav__link">
+    Debug the webserver {#_debug_the_webserver}
+  </a>
+  
+    <nav class="md-nav" aria-label="Debug the webserver {#_debug_the_webserver}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-the-application-_1_run_the_application_2" class="md-nav__link">
+    1. Run the application {#_1_run_the_application_2}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-lightruns-cli-for-log-insertion-_2_use_lightruns_cli_for_log_insertion" class="md-nav__link">
+    2. Use Lightruns CLI for log insertion {#_2_use_lightruns_cli_for_log_insertion}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerized-application-_dockerized_application" class="md-nav__link">
+    Dockerized Application {#_dockerized_application}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scala-game-of-life-_scala_game_of_life" class="md-nav__link">
+    Scala Game Of Life {#_scala_game_of_life}
+  </a>
+  
+    <nav class="md-nav" aria-label="Scala Game Of Life {#_scala_game_of_life}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-and-run-the-game-_build_and_run_the_game" class="md-nav__link">
+    Build and Run the Game {#_build_and_run_the_game}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-the-game-_debug_the_game" class="md-nav__link">
+    Debug the Game {#_debug_the_game}
+  </a>
+  
+    <nav class="md-nav" aria-label="Debug the Game {#_debug_the_game}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-the-application-_1_run_the_application_3" class="md-nav__link">
+    1. Run the application {#_1_run_the_application_3}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-lightruns-cli-for-log-insertion-_2_use_lightruns_cli_for_log_insertion_2" class="md-nav__link">
+    2. Use Lightruns CLI for log insertion {#_2_use_lightruns_cli_for_log_insertion_2}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groovy-prime-main-_groovy_prime_main" class="md-nav__link">
+    Groovy Prime Main {#_groovy_prime_main}
+  </a>
+  
+    <nav class="md-nav" aria-label="Groovy Prime Main {#_groovy_prime_main}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-the-application-_1_run_the_application_4" class="md-nav__link">
+    1. Run the application {#_1_run_the_application_4}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-lightruns-cli-for-log-insertion-_2_use_lightruns_cli_for_log_insertion_3" class="md-nav__link">
+    2. Use Lightruns CLI for log insertion {#_2_use_lightruns_cli_for_log_insertion_3}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Quick start tutorial</h1>
+                
+                <p>The <code>demo</code> directory has some sample java examples. We will use them in
+order to demonstrate the debugging capabilities.</p>
+<p>All the demos below assume the Lightrun backend is already installed and
+running.</p>
+<h2 id="prime-numbers-counter-_prime_numbers_counter">Prime Numbers Counter {#_prime_numbers_counter}<a class="headerlink" href="#prime-numbers-counter-_prime_numbers_counter" title="Permanent link">&para;</a></h2>
+<p>This demo is located under the <code>demo/prime-app</code> directory. The file
+<code>PrimeMain.java</code> has a short code that counts all the prime numbers less
+than 1B.</p>
+<p>Let's see how we can add additional log prints to this application:</p>
+<h3 id="1-run-the-application-_1_run_the_application">1. Run the application {#_1_run_the_application}<a class="headerlink" href="#1-run-the-application-_1_run_the_application" title="Permanent link">&para;</a></h3>
+<p>Open a new shell, and then:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> demo/prime-app
+javac PrimeMain.java
+java -agentpath:&lt;install_dir&gt;/lightrun_agent.so PrimeMain
+</code></pre></div>
+
+<p>Now the application is running.</p>
+<p>We can validate that the agent registered correctly by running
+<code>lightrunc list agents</code>.</p>
+<p>We should see something like:</p>
+<div class="codehilite"><pre><span></span><code><span class="mi">0</span> <span class="o">:</span> <span class="n">ID</span> <span class="mi">5</span><span class="n">c84e29871f7a700010ca737UPDATE</span> <span class="n">Sun</span><span class="o">,</span> <span class="mi">10</span> <span class="n">Mar</span> <span class="mi">2019</span> <span class="mi">10</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">32</span> <span class="n">GMT</span>
+</code></pre></div>
+
+<h3 id="2-use-lightruns-cli-_2_use_lightruns_cli">2. Use Lightruns CLI {#_2_use_lightruns_cli}<a class="headerlink" href="#2-use-lightruns-cli-_2_use_lightruns_cli" title="Permanent link">&para;</a></h3>
+<p>Open a new shell.</p>
+<p>Let's try to print the current primes counter.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">lightrunc log 0 PrimeMain.java:20 &quot;Current Count is {cnt}&quot;</span>
+</code></pre></div>
+
+<p>When we look at the application window we will see something like:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">Feb 28, 2019 2:11:29 AM PrimeMain main</span>
+<span class="c">INFO: LOGPOINT: current prime is 1467954</span>
+<span class="err">Feb 28, 2019 2:11:29 AM PrimeMain main</span>
+<span class="c">INFO: LOGPOINT: current prime is 1467955</span>
+<span class="err">Feb 28, 2019 2:11:29 AM PrimeMain main</span>
+<span class="c">INFO: LOGPOINT: current prime is 1467956</span>
+<span class="err">Feb 28, 2019 2:11:29 AM PrimeMain main</span>
+<span class="c">INFO: LOGPOINT: Logpoint is paused due to high call rate until log quota is restored</span>
+</code></pre></div>
+
+<p>Here we can see than our agent does not allow too many log prints to be
+fired - this is intended, we cap the CPU overhead of the agent.</p>
+<p>Not all the variables are available for exploration. Some of the debug
+information might be missing due to compiler's optimizations. In order
+to enhance the debug information, we should add the <code>-g</code> flag to the
+compilation command (more information is available in README file).</p>
+<p>For example in this demo application when we try to add the following
+log:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">lightrunc log 0 PrimeMain.java:20 &quot;Current Prime is {i}&quot;</span>
+</code></pre></div>
+
+<p>We see the following log printout in the application:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">INFO</span><span class="o">:</span> <span class="n">LOGPOINT</span><span class="o">:</span> <span class="n">Current</span> <span class="n">Prime</span> <span class="k">is</span> <span class="n">Identifier</span> <span class="n">i</span> <span class="n">not</span> <span class="n">found</span>
+<span class="n">Feb</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">2019</span> <span class="mi">2</span><span class="o">:</span><span class="mi">05</span><span class="o">:</span><span class="mi">07</span> <span class="n">AM</span> <span class="n">PrimeMain</span> <span class="n">isPrime</span>
+</code></pre></div>
+
+<p>Compiling with <code>-g</code> flag <code>javac -g PrimeMain.java</code> will enable watching
+i variable value.</p>
+<h2 id="web-app-demo-_web_app_demo">Web App Demo {#_web_app_demo}<a class="headerlink" href="#web-app-demo-_web_app_demo" title="Permanent link">&para;</a></h2>
+<p>This demo is located under <code>demo/web-app</code> directory. Here we will show
+how to debug a live production web server application using dynamic
+logs.</p>
+<h3 id="build-and-run-the-web-ssrver-_build_and_run_the_web_ssrver">Build and Run the Web sSrver {#_build_and_run_the_web_ssrver}<a class="headerlink" href="#build-and-run-the-web-ssrver-_build_and_run_the_web_ssrver" title="Permanent link">&para;</a></h3>
+<p>First, let's take a look on the application.</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> demo/web-app
+mvn package
+java -jar  target/webapp_demo-0.0.1-SNAPSHOT.jar
+</code></pre></div>
+
+<p>Now the webserver is running on <a href="http://localhost:8080">http://localhost:8080</a>.</p>
+<p>This webserver is a simple fibonacci series calculator. When we enter
+<code>http://localhost:8080/&lt;number&gt;/</code> we see the <code>&lt;number&gt;</code> fibonacci
+element.</p>
+<p>For example, <a href="http://localhost:8080/33">http://localhost:8080/33</a> will print 5702887.</p>
+<h3 id="debug-the-webserver-_debug_the_webserver">Debug the webserver {#_debug_the_webserver}<a class="headerlink" href="#debug-the-webserver-_debug_the_webserver" title="Permanent link">&para;</a></h3>
+<h4 id="1-run-the-application-_1_run_the_application_2">1. Run the application {#_1_run_the_application_2}<a class="headerlink" href="#1-run-the-application-_1_run_the_application_2" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> demo/web-app
+mvn package
+java -agentpath:&lt;install_dir&gt;/lightrun_agent.so <span class="se">\</span>
+     -jar  target/webapp_demo-0.0.1-SNAPSHOT.jar
+</code></pre></div>
+
+<p>Now the webserver is running on <a href="http://localhost:8080">http://localhost:8080</a>.</p>
+<h4 id="2-use-lightruns-cli-for-log-insertion-_2_use_lightruns_cli_for_log_insertion">2. Use Lightruns CLI for log insertion {#_2_use_lightruns_cli_for_log_insertion}<a class="headerlink" href="#2-use-lightruns-cli-for-log-insertion-_2_use_lightruns_cli_for_log_insertion" title="Permanent link">&para;</a></h4>
+<p>Looks like our simple app has an integer overflow:</p>
+<div class="codehilite"><pre><span></span><code>curl http://localhost:8080/50 <span class="c1"># will print -1109825406o</span>
+</code></pre></div>
+
+<p>We can use Lightruns CLI for inserting logs, and see the trace of such a
+request.</p>
+<div class="codehilite"><pre><span></span><code>lightrunc log <span class="m">0</span> main/java/Example.java:20 <span class="s2">&quot;{n3} = {n1} + {n2}&quot;</span>
+</code></pre></div>
+
+<p>We will see an output that looks like:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 1 = 0 + 1</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 2 = 1 + 1</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 3 = 1 + 2</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 5 = 2 + 3</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 8 = 3 + 5</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 13 = 5 + 8</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 21 = 8 + 13</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 34 = 13 + 21</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 55 = 21 + 34</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 89 = 34 + 55</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 144 = 55 + 89</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 233 = 89 + 144</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 377 = 144 + 233</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 610 = 233 + 377</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 987 = 377 + 610</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 1597 = 610 + 987</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 2584 = 987 + 1597</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 4181 = 1597 + 2584</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 6765 = 2584 + 4181</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 10946 = 4181 + 6765</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 17711 = 6765 + 10946</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 28657 = 10946 + 17711</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 46368 = 17711 + 28657</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 75025 = 28657 + 46368</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 121393 = 46368 + 75025</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 196418 = 75025 + 121393</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 317811 = 121393 + 196418</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 514229 = 196418 + 317811</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 832040 = 317811 + 514229</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 1346269 = 514229 + 832040</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 2178309 = 832040 + 1346269</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 3524578 = 1346269 + 2178309</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 5702887 = 2178309 + 3524578</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 9227465 = 3524578 + 5702887</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 14930352 = 5702887 + 9227465</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 24157817 = 9227465 + 14930352</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 39088169 = 14930352 + 24157817</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 63245986 = 24157817 + 39088169</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 102334155 = 39088169 + 63245986</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 165580141 = 63245986 + 102334155</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 267914296 = 102334155 + 165580141</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 433494437 = 165580141 + 267914296</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 701408733 = 267914296 + 433494437</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 1134903170 = 433494437 + 701408733</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: 1836311903 = 701408733 + 1134903170</span>
+<span class="err">INFO 14911 --- [nio-8080-exec-1] com.google.DynamicLog   : LOGPOINT: -1323752223 = 1134903170 + 1836311903</span>
+</code></pre></div>
+
+<p>Now we can see clearly the integer overflow.</p>
+<h2 id="dockerized-application-_dockerized_application">Dockerized Application {#_dockerized_application}<a class="headerlink" href="#dockerized-application-_dockerized_application" title="Permanent link">&para;</a></h2>
+<p>TODO</p>
+<h2 id="scala-game-of-life-_scala_game_of_life">Scala Game Of Life {#_scala_game_of_life}<a class="headerlink" href="#scala-game-of-life-_scala_game_of_life" title="Permanent link">&para;</a></h2>
+<p>Our agent can be used also for inserting logs into scala application.
+The files for this demo are located under <code>demo/scala-game-of-life</code>.
+Here we will find the famous <strong>Game Of Life</strong> simulation.</p>
+<h3 id="build-and-run-the-game-_build_and_run_the_game">Build and Run the Game {#_build_and_run_the_game}<a class="headerlink" href="#build-and-run-the-game-_build_and_run_the_game" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">TERM</span><span class="o">=</span>xterm-color
+<span class="nb">cd</span> demo/scala-game-of-life
+sbt package
+sbt run
+</code></pre></div>
+
+<p>This will print to the console every few msecond a new \'Game Of Life\'
+State.</p>
+<h3 id="debug-the-game-_debug_the_game">Debug the Game {#_debug_the_game}<a class="headerlink" href="#debug-the-game-_debug_the_game" title="Permanent link">&para;</a></h3>
+<h4 id="1-run-the-application-_1_run_the_application_3">1. Run the application {#_1_run_the_application_3}<a class="headerlink" href="#1-run-the-application-_1_run_the_application_3" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> demo/scala-game-of-life
+sbt package
+java  -agentpath:&lt;install_dir&gt;/lightrun_agent.so <span class="se">\</span>
+      -cp /home/osboxes/.sbt/boot/scala-2.12.7/lib/scala-library.jar:target/scala-2.12/game-of-life-scala_2.12-0.1.0.jar <span class="se">\</span>
+      de.l7r7.lab.conway.GameOfLife
+</code></pre></div>
+
+<p>Simulation is running.</p>
+<h4 id="2-use-lightruns-cli-for-log-insertion-_2_use_lightruns_cli_for_log_insertion_2">2. Use Lightruns CLI for log insertion {#_2_use_lightruns_cli_for_log_insertion_2}<a class="headerlink" href="#2-use-lightruns-cli-for-log-insertion-_2_use_lightruns_cli_for_log_insertion_2" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>lightrunc log <span class="m">0</span> de/l7r7/lab/conway/GameOfLife.scala:85 <span class="s2">&quot;Board Type {board.getClass().toString()}&quot;</span>
+</code></pre></div>
+
+<p>This will insert a log print after every game simulation.</p>
+<p>::: {.note}
+Expressions must be written using the Java language syntax, like in the
+example above.
+:::</p>
+<h2 id="groovy-prime-main-_groovy_prime_main">Groovy Prime Main {#_groovy_prime_main}<a class="headerlink" href="#groovy-prime-main-_groovy_prime_main" title="Permanent link">&para;</a></h2>
+<p>Our agent can be used also for inserting logs into groovy application.
+The files for this demo are located under <code>demo/groovy-app</code>. The file
+<code>GroovyPrimeMain.groovy</code> has a short code that counts all the prime
+numbers less than 1B.</p>
+<h3 id="1-run-the-application-_1_run_the_application_4">1. Run the application {#_1_run_the_application_4}<a class="headerlink" href="#1-run-the-application-_1_run_the_application_4" title="Permanent link">&para;</a></h3>
+<p>Open a new shell, and then:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> demo/groovy-app
+groovyc GroovyPrimeMain.groovy
+java -cp &lt;path_to_groovy_jar.jar&gt;:. -agentpath:&lt;install_dir&gt;/lightrun_agent.so GroovyPrimeMain
+</code></pre></div>
+
+<p>The application is running.</p>
+<h3 id="2-use-lightruns-cli-for-log-insertion-_2_use_lightruns_cli_for_log_insertion_3">2. Use Lightruns CLI for log insertion {#_2_use_lightruns_cli_for_log_insertion_3}<a class="headerlink" href="#2-use-lightruns-cli-for-log-insertion-_2_use_lightruns_cli_for_log_insertion_3" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>lightrunc log <span class="m">0</span> GroovyPrimeMain.groovy:22 <span class="s2">&quot;{num} is prime&quot;</span>
+</code></pre></div>
+
+<p>We will see an output that looks like:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">Feb 23, 2020 3:25:39 PM GroovyPrimeMain isPrime</span>
+<span class="c">INFO: LOGPOINT: 110389847 is prime</span>
+<span class="err">Feb 23, 2020 3:25:39 PM GroovyPrimeMain isPrime</span>
+<span class="c">INFO: LOGPOINT: 110389871 is prime</span>
+<span class="err">Feb 23, 2020 3:25:39 PM GroovyPrimeMain isPrime</span>
+<span class="c">INFO: LOGPOINT: 110389879 is prime</span>
+<span class="err">Feb 23, 2020 3:25:39 PM GroovyPrimeMain isPrime</span>
+<span class="c">INFO: LOGPOINT: 110389913 is prime</span>
+<span class="err">Feb 23, 2020 3:25:39 PM GroovyPrimeMain isPrime</span>
+<span class="c">INFO: LOGPOINT: 110389933 is prime</span>
+<span class="err">Feb 23, 2020 3:25:39 PM GroovyPrimeMain isPrime</span>
+<span class="c">INFO: LOGPOINT: 110389963 is prime</span>
+<span class="err">Feb 23, 2020 3:25:39 PM GroovyPrimeMain isPrime</span>
+<span class="c">INFO: LOGPOINT: Logpoint is paused due to high call rate until log quota is restored</span>
+</code></pre></div>
+
+<p>::: {.note}
+Expressions must be written using the Java language syntax, like in the
+example above.
+:::</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../install/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Installation
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../plugin/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Using lightrun in your workflow
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy  2020, Lightrun.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
