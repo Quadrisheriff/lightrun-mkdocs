@@ -23,7 +23,7 @@ markdown_extensions:
 copyright: "Copyright &copy  2020, Lightrun."
 
 pages:
-  - "Overview": introduction.md
+  - "Overview": index.md
   - "Lightrun license use": opensource.md
   - "Installation": install.md
   - "Quick start tutorial": demo.md
